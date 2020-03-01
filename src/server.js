@@ -91,6 +91,43 @@ router.post('/signin', function(req, res) {
         };
 });
 
+
+
+router.post('/movies', function(req, res) {
+    if (!req.body.moviename || !req.body.year) {
+        res.json({success: false, msg: 'Please pass Movie name and year.'});
+    } else {
+        var newMovie = {
+            moviename: req.body.moviename,
+            id: req.body.year
+        };
+        db.saveM(newMovie); //no duplicate checking
+        res.json({success: true, msg: 'Successful created new user.'});
+    }
+});
+
+router.get('/movies', function (req, res) {
+    var movie = db.find(req.body.moviename, req.body.year);
+
+    if(!movie) {
+        res.status(401).send({success: false, msg: 'Authentication failed. No Movie given.'});
+    }
+    else {
+        res.json({success: true, msg: 'Movie Found!'})
+    }
+});
+
+router.put('/movies', function(req, res){
+    var movie = db.update(req.body.id, req.body.moviename);
+
+    if(!movie) {
+        res.status(401).send({success: false, msg: 'Authentication failed. No Movie given.'});
+    }
+    else {
+
+    }
+});
+
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
 

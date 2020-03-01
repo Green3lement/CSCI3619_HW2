@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9ee19f9-cc16-478b-9ef6-92d5d45bbb3c" name="Default" comment="" />
+    <list default="true" id="d9ee19f9-cc16-478b-9ef6-92d5d45bbb3c" name="Default" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/post.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="HW2" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -16,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1XjH3wFtiWoieFxVzOv7OgU4uCn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,8 +51,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Node.js.server.js">
-    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" node-parameters="-r dotenv/config" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kyle VanSteelandt\Documents\WebAPIHW\HW2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Mocha.test\post.js">
+    <configuration name="server.js" type="NodeJSConfigurationType" node-parameters="-r dotenv/config" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -54,13 +70,26 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test\post.js" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/post.js</test-file>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Mocha.test\post.js" />
       <item itemvalue="Node.js.server.js" />
       <item itemvalue="npm.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.server.js" />
+        <item itemvalue="Mocha.test\post.js" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -83,55 +112,73 @@
       <workItem from="1550105398207" duration="557000" />
       <workItem from="1581552424643" duration="2834000" />
       <workItem from="1582848197599" duration="1058000" />
-      <workItem from="1582851666728" duration="508000" />
+      <workItem from="1582851666728" duration="10741000" />
+      <workItem from="1583093752379" duration="82000" />
+      <workItem from="1583093864571" duration="1596000" />
+      <workItem from="1583095823775" duration="3023000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581554502599">
+    <state x="403" y="93" key="#Notifications" timestamp="1583098180164">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581554502599" />
+    <state x="403" y="93" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1583098180164" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583080701811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1583080701811" />
     <state x="542" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581552942686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="542" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1581552942686" />
-    <state width="1364" height="278" key="GridCell.Tab.0.bottom" timestamp="1581622201672">
+    <state x="529" y="135" key="#server.js" timestamp="1583080640019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1364" height="278" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581622201672" />
-    <state width="1364" height="278" key="GridCell.Tab.0.center" timestamp="1581622201672">
+    <state x="529" y="135" key="#server.js/0.0.1536.824@0.0.1536.824" timestamp="1583080640019" />
+    <state x="441" y="16" key="CommitChangelistDialog2" timestamp="1583098361880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1364" height="278" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581622201672" />
-    <state width="1364" height="278" key="GridCell.Tab.0.left" timestamp="1581622201672">
+    <state x="441" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583098361880" />
+    <state width="682" height="276" key="GridCell.Tab.0.bottom" timestamp="1583098501585">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1364" height="278" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581622201672" />
-    <state width="1364" height="278" key="GridCell.Tab.0.right" timestamp="1581622201672">
+    <state width="682" height="276" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583098501585" />
+    <state width="682" height="276" key="GridCell.Tab.0.center" timestamp="1583098501584">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1364" height="278" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581622201672" />
+    <state width="682" height="276" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583098501584" />
+    <state width="682" height="276" key="GridCell.Tab.0.left" timestamp="1583098501584">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="682" height="276" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583098501584" />
+    <state width="682" height="276" key="GridCell.Tab.0.right" timestamp="1583098501585">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="682" height="276" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583098501585" />
     <state x="277" y="56" key="SettingsEditor" timestamp="1581552462229">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581552462229" />
+    <state x="620" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583100111018">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="620" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1583100111018" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server.js</url>
-          <line>49</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/auth.js</url>
-          <line>7</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/server.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

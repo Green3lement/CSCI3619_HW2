@@ -1,17 +1,17 @@
 //Require the dev-dependencies
-let envPath = __dirname + "/../.env"
+let envPath = __dirname + "/../src/.env"
 require('dotenv').config({path:envPath})
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('../server');
+let server = require('../src/server');
 let should = chai.should();
 
 chai.use(chaiHttp);
 
 
 let login_details = {
-    'username': 'user',
-    'password': 'pass'
+    'username': 'testuser',
+    'password': 'cu'
 }
 
 //Our parent block
@@ -58,5 +58,8 @@ describe('Register, Login and check token', () => {
                         });
                 });
         });
+
+
+
     });
 });

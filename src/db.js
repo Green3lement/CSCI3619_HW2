@@ -7,6 +7,7 @@ var crypto = require('crypto');
 module.exports = function () {
     return {
         userList: [],
+        movieList: [],
         /*
          * Save the user inside the "db".
          */
@@ -18,16 +19,29 @@ module.exports = function () {
         /*
          * Retrieve a movie with a given id or return all the movies if the id is undefined.
          */
-        find: function (id) {
-            if (id) {
-                return this.userList.find(function (element) {
-                    return element.id === id;
+        find: function (movie) {
+            if (movie) {
+                return this.movieList.find(function (element) {
+                    return element.moviename === movie;
                 });
             }
             else {
-                return this.userList;
+                return this.movieList;
             }
         },
+        /*
+         *  Create a new movie
+        */
+        saveM: function(movie) {
+            var lastElement = this.movieList.length - 1;
+
+            if(lastElement !== -1){
+                this.movieList[lastElement].moviename = movie.moviename;
+                this.movieList[lastElement].id = movie.id;
+            }
+        },
+
+
         findOne: function (name) {
             if (name) {
                 return this.userList.find(function (element) {
@@ -41,14 +55,14 @@ module.exports = function () {
         /*
          * Delete a movie with the given id.
          */
-        remove: function (id) {
+        remove: function (movie) {
             var found = 0;
-            this.userList = this.userList.filter(function (element) {
-                if (element.id === id) {
+            this.movieList = this.movieList.filter(function (element) {
+                if (element.moviename === movie) {
                     found = 1;
                 }
                 else {
-                    return element.id !== id;
+                    return element.moviename !== movie;
                 }
             });
             return found;
@@ -56,13 +70,13 @@ module.exports = function () {
         /*
          * Update a movie with the given id
          */
-        update: function (id, user) {
-            var userIndex = this.userList.findIndex(function (element) {
-                return element.id === id;
+        update: function (year, movie) {
+            var movieIndex = this.movieList.findIndex(function (element) {
+                return element.year === year;
             });
             if (userIndex !== -1) {
-                this.userList[userIndex].username = user.username;
-                this.userList[userIndex].password = user.password;
+                this.movieList[movieIndex].moviename = movie.moviename;
+                this.movieList[movieIndex].year = movie.year;
                 return 1;
             }
             else {
