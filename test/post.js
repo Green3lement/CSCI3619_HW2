@@ -12,8 +12,15 @@ chai.use(chaiHttp);
 let login_details = {
     'username': 'testuser',
     'password': 'cu'
-}
-
+};
+let movies_details = {
+    'moviename': 'Movie',
+    'id': '10'
+};
+let movie_update = {
+    'moviename': 'film',
+    'id': '10'
+};
 //Our parent block
 describe('Register, Login and check token', () => {
     beforeEach((done) => { //Before each test we empty the database
@@ -37,7 +44,7 @@ describe('Register, Login and check token', () => {
                         .post('/signin')
                         .send(login_details)
                         .end((err, res) => {
-                            console.log('this was run the login part');
+                            console.log('this was to run the login part');
                             res.should.have.status(200);
                             res.body.should.have.property('token');
 
@@ -52,7 +59,7 @@ describe('Register, Login and check token', () => {
                                 .end((err, res) => {
                                     res.should.have.status(200);
                                     res.body.should.have.property('echo')
-;
+                                    ;
                                     done(); // Don't forget the done callback to indicate we're done!
                                 })
                         });
@@ -62,4 +69,57 @@ describe('Register, Login and check token', () => {
 
 
     });
+});
+
+
+
+describe('Create, Find, Update, and Delete Movies', () => {
+    beforeEach((done) => { //Before each test we empty the database
+        db.movieList = [];
+        done();
+    });
+    /*
+      * Test the /GET route
+      */
+    describe('/movies ', () => {
+        it('it should Create, Find, Update, and Delete Movies', (done) => {
+            chai.request(server)
+                .post('/movies')
+                .send(movies_details)
+                .end((err, res) => {
+                    console.log('this was to run the create part');
+                    res.should.have.status(200);
+                    res.body.success.should.be.eql(true);
+
+                    // follow up with finding created movie
+                    chai.request(server)
+                        .get('/movies')
+                        .send('10')
+                        .end((err, res) => {
+                            console.log('this was to run the find part');
+                            res.should.have.status(200);
+
+                            chai.request(server)
+                                .put('/movies')
+                                .send(movie_update)
+                                .end((err, res) => {
+                                    console.log('this was to run the update part');
+                                    res.should.have.status(200);
+                                    res.body.success.should.be.eql(true);
+
+                                    chai.request(server)
+                                        .delete('/movies')
+                                        .send('10')
+                                        .end((err, res) => {
+                                            console.log('this was to run the delete part');
+                                            res.should.have.status(200);
+                                            done(); // Don't forget the done callback to indicate we're done!
+                                        });
+                                });
+                        });
+
+                    });
+                });
+        });
+
 });
