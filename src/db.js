@@ -33,12 +33,10 @@ module.exports = function () {
          *  Create a new movie
         */
         saveM: function(movie) {
-            var lastElement = this.movieList.length - 1;
-
-            if(lastElement !== -1){
-                this.movieList[lastElement].moviename = movie.moviename;
-                this.movieList[lastElement].id = movie.id;
-            }
+            movie.id = crypto.randomBytes(20).toString('hex'); // fast enough for our purpose
+            this.movieList.push(movie);
+            return 1;
+            
         },
 
 
@@ -70,13 +68,13 @@ module.exports = function () {
         /*
          * Update a movie with the given id
          */
-        update: function (year, movie) {
+        update: function (id, movie) {
             var movieIndex = this.movieList.findIndex(function (element) {
-                return element.year === year;
+                return element.id === id;
             });
             if (userIndex !== -1) {
                 this.movieList[movieIndex].moviename = movie.moviename;
-                this.movieList[movieIndex].year = movie.year;
+                this.movieList[movieIndex].id = movie.id;
                 return 1;
             }
             else {

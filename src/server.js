@@ -94,12 +94,12 @@ router.post('/signin', function(req, res) {
 
 
 router.post('/movies', function(req, res) {
-    if (!req.body.moviename || !req.body.year) {
-        res.json({success: false, msg: 'Please pass Movie name and year.'});
+    if (!req.body.moviename || !req.body.id) {
+        res.json({success: false, msg: 'Please pass Movie name and id.'});
     } else {
         var newMovie = {
             moviename: req.body.moviename,
-            id: req.body.year
+            id: req.body.id
         };
         db.saveM(newMovie); //no duplicate checking
         res.json({success: true, msg: 'Successful created new user.'});
@@ -107,10 +107,10 @@ router.post('/movies', function(req, res) {
 });
 
 router.get('/movies', function (req, res) {
-    var movie = db.find(req.body.moviename, req.body.year);
+    var movie = db.find(req.body.moviename);
 
     if(!movie) {
-        res.status(401).send({success: false, msg: 'Authentication failed. No Movie given.'});
+        res.status(400).send({success: false, msg: 'No Movie given.'});
     }
     else {
         res.json({success: true, msg: 'Movie Found!'})
@@ -121,11 +121,23 @@ router.put('/movies', function(req, res){
     var movie = db.update(req.body.id, req.body.moviename);
 
     if(!movie) {
-        res.status(401).send({success: false, msg: 'Authentication failed. No Movie given.'});
+        res.status(400).send({success: false, msg: 'No Movie given.'});
     }
     else {
-
+        res.json({success: true, msg: 'Movie Updated!'})
     }
+});
+
+router.delete('/movies', function (req, res) {
+    var movie = db.remove(req.body.id);
+
+    if(!movie){
+        res.status(400).send({success:false, msg: 'No Movie given.'});
+    }
+    else{
+        res.json({success: true, msg: 'Movie Deleted!'})
+    }
+
 });
 
 app.use('/', router);
