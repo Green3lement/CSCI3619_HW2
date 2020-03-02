@@ -88,7 +88,7 @@ router.post('/signin', function(req, res) {
             else {
                 res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
             }
-        };
+        }
 });
 
 
@@ -102,12 +102,12 @@ router.post('/movies', function(req, res) {
             id: req.body.id
         };
         db.saveM(newMovie); //no duplicate checking
-        res.json({success: true, msg: 'Successful created new user.'});
+        res.json({success: true, msg: 'Successful created new Movie.'});
     }
 });
 
 router.get('/movies', function (req, res) {
-    var movie = db.find(req.body.moviename);
+    var movie = db.find(req.body.id);
 
     if(!movie) {
         res.status(400).send({success: false, msg: 'No Movie given.'});

@@ -19,10 +19,10 @@ module.exports = function () {
         /*
          * Retrieve a movie with a given id or return all the movies if the id is undefined.
          */
-        find: function (movie) {
-            if (movie) {
+        find: function (id) {
+            if (id) {
                 return this.movieList.find(function (element) {
-                    return element.moviename === movie;
+                    return element.id === id;
                 });
             }
             else {
@@ -33,7 +33,7 @@ module.exports = function () {
          *  Create a new movie
         */
         saveM: function(movie) {
-            movie.id = crypto.randomBytes(20).toString('hex'); // fast enough for our purpose
+            //movie.id = crypto.randomBytes(20).toString('hex'); // fast enough for our purpose
             this.movieList.push(movie);
             return 1;
             
@@ -53,14 +53,14 @@ module.exports = function () {
         /*
          * Delete a movie with the given id.
          */
-        remove: function (movie) {
+        remove: function (id) {
             var found = 0;
             this.movieList = this.movieList.filter(function (element) {
-                if (element.moviename === movie) {
+                if (element.id === id) {
                     found = 1;
                 }
                 else {
-                    return element.moviename !== movie;
+                    return element.id !== id;
                 }
             });
             return found;
@@ -72,7 +72,7 @@ module.exports = function () {
             var movieIndex = this.movieList.findIndex(function (element) {
                 return element.id === id;
             });
-            if (userIndex !== -1) {
+            if (movieIndex !== -1) {
                 this.movieList[movieIndex].moviename = movie.moviename;
                 this.movieList[movieIndex].id = movie.id;
                 return 1;
