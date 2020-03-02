@@ -102,7 +102,7 @@ router.post('/movies', function(req, res) {
             id: req.body.id
         };
         db.saveM(newMovie); //no duplicate checking
-        res.json({success: true, msg: 'Successful created new Movie.'});
+        res.json({success: true, msg: 'Successful created new Movie.', headers: newMovie});
     }
 });
 
@@ -113,7 +113,7 @@ router.get('/movies', function (req, res) {
         res.status(400).send({success: false, msg: 'No Movie given.'});
     }
     else {
-        res.json({success: true, msg: 'Movie Found!'})
+        res.json({success: true, msg: 'Movie Found!', headers: movie})
     }
 });
 
@@ -124,7 +124,7 @@ router.put('/movies', function(req, res){
         res.status(400).send({success: false, msg: 'No Movie given.'});
     }
     else {
-        res.json({success: true, msg: 'Movie Updated!'})
+        res.json({success: true, msg: 'Movie Updated!', headers: movie})
     }
 });
 
@@ -135,7 +135,7 @@ router.delete('/movies', function (req, res) {
         res.status(400).send({success:false, msg: 'No Movie given.'});
     }
     else{
-        res.json({success: true, msg: 'Movie Deleted!'})
+        res.json({success: true, msg: 'Movie Deleted!', headers: movie})
     }
 
 });
