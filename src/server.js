@@ -124,7 +124,7 @@ router.put('/movies', function(req, res){
         res.status(400).send({success: false, msg: 'No Movie given.'});
     }
     else {
-        res.json({success: true, msg: 'Movie Updated!', headers: movie})
+        res.json({success: true, msg: 'Movie Updated!', headers: req.body.id})
     }
 });
 
@@ -135,7 +135,7 @@ router.delete('/movies', function (req, res) {
         res.status(400).send({success:false, msg: 'No Movie given.'});
     }
     else{
-        res.json({success: true, msg: 'Movie Deleted!', headers: movie})
+        res.json({success: true, msg: 'Movie Deleted!', headers: req.body.id})
     }
 
 });
